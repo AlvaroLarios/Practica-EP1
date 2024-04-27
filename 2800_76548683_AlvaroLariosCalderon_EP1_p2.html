@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2800_76548683_AlvaroLariosCalderon_EP1_p2</title>
+</head>
+<body>
+    <h4>Se le pide al desarrollador crear una aplicación que te pida el precio de dos televisores. El aplicativo informará que comprará 3 unidades del televisor con más bajo precio y 2 unidades del televisor con el más alto precio. Mostrar el total a pagar por el cliente.</h4>
+    
+    <script>
+
+        var tele1,tele2,telemenor,telemayor,suma
+
+        tele1=(prompt("Ingrese el valor del primer televisor"))
+        tele2=(prompt("Ingrese el valor del segundo televisor"))
+        
+
+        if(tele1<tele2){
+            telemenor=tele1
+            telemayor=tele2
+        }
+        else{
+            telemayor=tele1
+            telemenor=tele2
+        }
+        suma=telemenor*3+telemayor*2
+
+        document.write("El usuario tendrá que comprar: 3*"+telemenor+" + "+"2*"+telemayor+"="+suma)
+    </script>    
+</body>
+</html>

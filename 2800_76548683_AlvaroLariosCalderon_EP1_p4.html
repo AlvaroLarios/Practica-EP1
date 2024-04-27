@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2800_76548683_AlvaroLariosCalderon_EP1_p3</title>
+</head>
+<body>
+    <h4>
+        Desarrolle una aplicación que te pida la edad de un empleado, la categoría, el nombre, el área en la que trabaja, la profesión, hijos y las horas trabajadas en el último mes.
+        a.El hombre gana 40 x hora de trabajo si es categoría A y 50 si es categoría B
+        b.Si el empleado trabajó más de 160 horas al mes gana un bono de 200
+        c.Si el empleado tiene más de 40 años gana un bono de 300
+        d.Si el empleado trabaja en el área de Sistemas gana un bono de 500 las demás áreas ganan 100
+        e.Si el empleado es ingeniero gana un bono de 500, las demás profesiones ganan 200
+        f.Si el empleado tiene hijos gana 500 soles más por hijo</h4>
+
+        <h4>EJEMPLO:
+        EL empleado Alfredo Pardon, trabajó 165 de categoría A<br>
+        Sueldo Base: 165*40=6600<br>
+        El empleado tiene 41 años=6600+300=6900<br>
+        El empleado trabaja en el área de sistemas: 6900+500=7400<br>
+        El empleado es administrador: 7400+200=7600<br>
+        El empleado tiene 2 hijos: 7600+2*500=8600<br>
+        EL sueldo final del empleado es : 8600 nuevos soles.</h4>
+    
+    <script>
+        
+        var nombre,edad,horas,profesion,area,categoria,hijos
+        var darea,dprofesion,dcategoria,nedad,nhijos
+        var salario,salario2,salario3,salario4,salario5,
+
+        nombre=prompt("Ingrese su nombre")
+        edad=parseInt(prompt("Ingrese su edad"))
+        horas=parseInt(prompt("Ingrese las horas trabajadas en el ultimo mes"))
+        profesion=prompt("Ingrese su profesión: (i)ngeniero, (a)dministrador, (c)ualquier otra")
+        area=prompt("Ingrese el área de trabajo: (s)istemas, (c)ualquier otra")
+        categoria=prompt("Ingrese su categoria: (a) o (b)")
+        hijos=prompt("Tiene hijos (s)i, (n)o")
+        salario=0
+
+        if(categoria=="a"){
+            dcategoria="A"
+            salario=horas*40
+        }else if(categoria=="b"){
+            dcategoria="B"
+            salario=horas*50
+        }
+
+        if(edad>40){
+            nedad=300
+            salario2=salario+nedad
+        }else if(edad<=40)
+            nedad=0
+            salario2=salario+nedad
+
+        if(area=="s"){
+            darea="el área de Sistemas"
+            salario3=salario2+500
+        }else if(area=="c"){
+            darea="cualquier otra área que no es de Sistemas"
+            salario3=salario2+100
+        }
+
+        if(profesion=="i"){
+            dprofesion="Ingeniero"
+            salario4=salario3+500
+        }else if(profesion=="a"){
+            dprofesion="Administrador"
+            salario4=salario3+200
+        }else if(profesion=="c"){
+            dprofesion="de cualquier otra profesión que no corresponde a Ingeniero"
+            salario4=salario3+200
+        }
+
+        if(hijos=="s"){
+            nhijos=prompt("Ingrese el numero de hijos que tiene")
+            salario5=salario4+(nhijos*500)
+        }else{
+            nhijos="no tiene" 
+            salario5=salario4+0
+        }
+
+
+
+        document.write("El empleado "+nombre+", trabajó "+horas+" horas y es de categoría "+dcategoria+"<br>")
+        document.write("Sueldo base: "+(horas)+"*"+(salario/horas)+" = "+salario+"<br>")
+        document.write("El empleado tiene "+edad+" años = "+salario+" + "+nedad+ " = "+salario2+"<br>")
+        document.write("El empleado trabaja en "+darea+" = "+salario2+" + "+(salario3-salario2)+" = "+salario3+"<br>")
+        document.write("El empleado es: "+dprofesion+": "+salario3+" + "+(salario4-salario3)+" = "+salario4+"<br>")
+
+        if(hijos=="s"){
+            document.write("El empleado tiene: "+nhijos+" hijos: "+salario4+" + "+nhijos+" * "+500+" = "+salario5+"<br>")
+        }else{
+            document.write("El empleado no tiene hijos"+"<br>")
+        }
+
+        document.write("El sueldo final del empleado es de: "+salario5+" nuevos soles.")
+
+
+    </script>
+</body>
+</html>

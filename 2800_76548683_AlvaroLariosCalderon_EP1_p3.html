@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2800_76548683_AlvaroLariosCalderon_EP1_p3</title>
+</head>
+<body>
+    <h4>Desarrolle una aplicación que te pida tres números de 3 cifras, uno múltiplo de 3, de 5 y de 7, en ese orden. El programa tendrá que mostrarte los errores si algún número no cumpliera con lo solicitado. Y si los tres son correctos deberá mostrar:
+    Mensaje:"Los tres números son correctos, los números ingresados fueron: 300, 150, 490, la suma de ellos es: 940"
+    </h4>
+    
+    <script>
+        
+        var num3,num5,num7,suma
+
+        num3=parseInt(prompt("Ingrese un numero de tres cifras multiplo de 3"))
+
+        if((num3<100)||(num3>999)){
+            document.write("El numero ingresado no es de tres cifras,estas fuera")
+            throw("")
+        }else{
+            if(num3%3!=0){
+                document.write("El numero ingresado no es multiplo de 3, estas fuera")
+                throw("")
+            }
+        }
+
+        num5=parseInt(prompt("Ingrese un numero de tres cifras multiplo de 5"))
+
+        if((num5<100)||(num5>999)){
+            document.write("El numero ingresado no es de tres cifras,estas fuera")
+            throw("")
+        }else{
+            if(num5%5!=0){
+                document.write("El numero ingresado no es multiplo de 5, estas fuera")
+                throw("")
+            }
+        }
+
+        num7=parseInt(prompt("Ingrese un numero de tres cifras multiplo de 7"))
+
+        if((num7<100)||(num7>999)){
+            document.write("El numero ingresado no es de tres cifras,estas fuera")
+            throw("")
+        }else{
+            if(num7%7!=0){
+                document.write("El numero ingresado no es multiplo de 7, estas fuera")
+                throw("")
+            }
+        }
+
+        suma=num3+num5+num7
+
+        document.write("Los tres numeros son correctos"+"<br>")
+        document.write("Los números ingresados fueron: "+num3+", "+num5+", "+num7+"<br>")
+        document.write("La suma de ellos es: "+suma)
+        
+    </script>
+</body>
+</html>
